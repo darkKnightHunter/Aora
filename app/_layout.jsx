@@ -32,12 +32,3 @@ const RootLayout = () => {
 };
 
 export default RootLayout;
-
-const styles = StyleSheet.create({
-  constainer: {
-    display: "flex",
-    justifyContent: "center",
-    flex: 1,
-    alignItems: "center",
-  },
-});
