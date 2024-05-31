@@ -15,6 +15,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
       />
       <Text
         className={`${focused ? `font-psemibold` : `font-preqular`} text-sx `}
+        style={{ color: color }}
       >
         {name}
       </Text>
@@ -28,6 +29,14 @@ const TabsLayout = () => {
       <Tabs
         screenOptions={{
           tabBarShowLabel: false,
+          tabBarActiveTintColor: "#FFA001",
+          tabBarInactiveTintColor: "#CDCDE0",
+          tabBarStyle: {
+            backgroundColor: "#161622",
+            borderTopWidth: 1,
+            borderTopColor: "#232533",
+            height: 84,
+          },
         }}
       >
         <Tabs.Screen
@@ -41,6 +50,52 @@ const TabsLayout = () => {
                 name={"Home"}
                 color={color}
                 focused={focused}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="bookmark"
+          options={{
+            title: "Bookmark",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={icons.bookmark}
+                name={"Bookmark"}
+                color={color}
+                focused={focused}
+              />
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="create"
+          options={{
+            title: "Create",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                name={"Create"}
+                focused={focused}
+                color={color}
+                icon={icons.plus}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: "Profile",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                name={"Profile"}
+                focused={focused}
+                color={color}
+                icon={icons.profile}
               />
             ),
           }}
