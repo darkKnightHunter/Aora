@@ -27,5 +27,12 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": ["expo-router", "expo-font"]
+  },
+  "jsEngine": "hermes",
+  "ios": {
+    "jsEngine": "jsc"
+  },
+  "android": {
+    "jsEngine": "jsc"
   }
 }

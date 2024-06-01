@@ -15,6 +15,7 @@ const SigIn = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const onSubmit = async () => {
+    router.replace("/home");
     if (!form.email || !form.password) {
       Alert.alert("Error", "Please fill in all the fields");
       return;
@@ -22,7 +23,6 @@ const SigIn = () => {
 
     setIsSubmitting(true);
     // console.log("yep");
-    console.log(form.email);
 
     try {
       const result = await signIn(form.email, form.password);
